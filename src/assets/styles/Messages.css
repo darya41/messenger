@@ -1,0 +1,16 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 54px;
+}
+
+.messages::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ffffff;
+}
+.messages::-webkit-scrollbar-thumb {
+  background: #6200ff;
+  border-radius: 4px;
+}
