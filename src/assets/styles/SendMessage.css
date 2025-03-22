@@ -1,0 +1,29 @@
+@import url("./colors.css");
+
+.send-message input {
+  width: 90%;
+  height: 90%;
+  border-radius: 35px;
+  border: 0;
+}
+
+.send-message {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-around;
+  bottom: 1px;
+  position: absolute;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 50px;
+  align-items: center;
+  border-radius: 35px;
+  background-color: #d5aaff;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.send-message * {
+  margin-right: 20px;
+}

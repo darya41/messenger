@@ -4,4 +4,6 @@
   background: var(--second-background-color);
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }

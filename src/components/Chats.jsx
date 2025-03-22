@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/Chats.css";
+import "../assets/styles/LeftBar.css";
 import Chat from "./Chat";
 
 const Chats = () => {
