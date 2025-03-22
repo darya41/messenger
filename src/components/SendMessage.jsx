@@ -1,20 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import "../assets/styles/SendMessage.css";
 
 const SendMessage = ({ messages, setMessages }) => {
   const [currentMessage, setCurrentMessage] = useState("");
-  const messageEndRed = useRef(null);
+  // const messageEndRef = useRef(null);
 
-  const formatDate = (date) => {
-    const hours = String(date.getHours()).padStart(2, "0");
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
+  // const formatDate = (date) => {
+  //   const hours = String(date.getHours()).padStart(2, "0");
+  //   const minutes = String(date.getMinutes()).padStart(2, "0");
+  //   const day = String(date.getDate()).padStart(2, "0");
+  //   const month = String(date.getMonth() + 1).padStart(2, "0");
+  //   const year = date.getFullYear();
 
-    return `${hours}:${minutes} ${day}.${month}.${year}`;
-  };
+  //   return `${hours}:${minutes} ${day}.${month}.${year}`;
+  // };
 
   return (
     <div className="send-message">

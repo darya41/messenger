@@ -1,16 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { LuDelete } from "react-icons/lu";
 import "../assets/styles/TopBar.css";
 
-const TopBar = () => {
+const TopBar = ({ chatname }) => {
+  const [isHoveredDelete, setIsHoveredDelete] = useState(false);
+  const [isHoveredRedact, setIsHoveredRedact] = useState(false);
+
+  const handleMouseEnterRedact = () => {
+    setIsHoveredRedact(true);
+  };
+
+  const handleMouseLeaveRedact = () => {
+    setIsHoveredRedact(false);
+  };
+
+  const handleMouseEnterDelete = () => {
+    setIsHoveredDelete(true);
+  };
+
+  const handleMouseLeaveDelete = () => {
+    setIsHoveredDelete(false);
+  };
+
   return (
     <div className="top-bar">
-      <h1>Chatname</h1>
+      <h1>{chatname}</h1>
       <div className="options-panel">
-        <FaEdit style={{ width: 30, height: 30 }} />
+        <FaEdit
+          style={{
+            width: 30,
+            height: 30,
+            fill: isHoveredRedact ? "#00ff00" : "white",
+            transition: "all 0.3s",
+          }}
+          onMouseEnter={handleMouseEnterRedact}
+          onMouseLeave={handleMouseLeaveRedact}
+        />
 
-        <LuDelete style={{ width: 35, height: 35 }} />
+        <LuDelete
+          style={{
+            width: 35,
+            height: 35,
+            fill: isHoveredDelete ? "red" : "white",
+            transition: "all 0.3s",
+            stroke: "black",
+          }}
+          onMouseEnter={handleMouseEnterDelete}
+          onMouseLeave={handleMouseLeaveDelete}
+        />
       </div>
     </div>
   );

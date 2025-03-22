@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "../assets/styles/LoginForm.css";
 
-const LoginForm = ({ setIsLoginned }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+const LoginForm = ({
+  setIsLoginned,
+  setLogin,
+  login,
+  setPassword,
+  password,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(login, password);
     e.target.reset();
 
-    if (email === "devytopchik@yandex.by" && password == 1) {
+    if (login === "devytophik" && password === "1111") {
       setIsLoginned(true);
       localStorage.setItem("isLoginned", true);
     }
 
-    setEmail("");
+    setLogin("");
     setPassword("");
   };
 
@@ -24,9 +27,9 @@ const LoginForm = ({ setIsLoginned }) => {
       <h2>Вход</h2>
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="Login"
+          onChange={(e) => setLogin(e.target.value)}
         ></input>
         <input
           type="password"

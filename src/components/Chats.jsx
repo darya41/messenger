@@ -1,28 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/LeftBar.css";
 import Chat from "./Chat";
 
-const Chats = () => {
+const Chats = ({ setChatId, chats }) => {
+  const [inputChatname, setInputChatname] = useState("");
+
   return (
     <div className="left-block">
-      <input className="input-chat" placeholder="Название чата"></input>
+      <input
+        value={inputChatname}
+        className="input-chat"
+        placeholder="Название чата"
+        onChange={(e) => setInputChatname(e.target.value)}
+      ></input>
 
       <div className="chats">
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
+        {chats
+          .filter((el) =>
+            el.chatname.toLowerCase().includes(inputChatname.toLowerCase())
+          )
+          .map((el, index) => (
+            <Chat setChatId={setChatId} key={index} id={el.id} chat={el} />
+          ))}
       </div>
     </div>
   );
