@@ -1,0 +1,30 @@
+@import url("./colors.css");
+
+.chats {
+  width: 500px;
+  height: 92%;
+  background: var(--third-background-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.left-block {
+  height: 100%;
+}
+.input-chat {
+  width: 470px;
+  height: 50px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 30px;
+  border: 0;
+}
+
+.chats::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ffffff;
+}
+.chats::-webkit-scrollbar-thumb {
+  background: #6200ff;
+  border-radius: 4px;
+}

@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --third-color: #7b68ee;
+
+  --background-color: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  --second-background-color: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--third-color)
+  );
+
+  --third-background-color: linear-gradient(
+    150deg,
+    var(--secondary-color),
+    var(--third-color),
+    #d5aaff
+  );
+
+  --text-color: #333;
+  --input-border: #ccc;
+  --input-focus: rgba(102, 126, 234, 0.5);
+  --button-hover: #5563c1;
+}

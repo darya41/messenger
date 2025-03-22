@@ -1,0 +1,27 @@
+.chat {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  margin: 5px 10px;
+  transition: all 0.5s ease-in-out;
+}
+.user-icon {
+  width: 70px;
+  height: 70px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 3px 15px 3px 20px;
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.chat:hover {
+  box-shadow: 10px 10px 30px rgb(43, 0, 255);
+  transform: scale(1.05);
+}
