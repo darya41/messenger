@@ -10,12 +10,13 @@ function App() {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    setIsLoginned(localStorage.getItem("isLoginned"));
+    setIsLoginned(localStorage.getItem("isLoginned") === "true");
+    console.log(isLoginned);
   }, []);
 
   return (
     <div className="App">
-      {!isLoginned && (
+      {isLoginned === false ? (
         <LoginForm
           setIsLoginned={setIsLoginned}
           setLogin={setLogin}
@@ -23,8 +24,9 @@ function App() {
           password={password}
           setPassword={setPassword}
         />
+      ) : (
+        <Main login={login} />
       )}
-      {isLoginned && <Main login={login} />}
     </div>
   );
 }

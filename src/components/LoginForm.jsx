@@ -13,7 +13,10 @@ const LoginForm = ({
     console.log(login, password);
     e.target.reset();
 
-    if (login === "devytophik" && password === "1111") {
+    if (login === "devytopchik" && password == 1) {
+      console.log(login);
+      console.log(password);
+
       setIsLoginned(true);
       localStorage.setItem("isLoginned", true);
     }
@@ -27,11 +30,13 @@ const LoginForm = ({
       <h2>Вход</h2>
       <form onSubmit={handleSubmit}>
         <input
+          value={login}
           type="text"
           placeholder="Login"
           onChange={(e) => setLogin(e.target.value)}
         ></input>
         <input
+          value={password}
           type="password"
           placeholder="Пароль"
           onChange={(e) => setPassword(e.target.value)}

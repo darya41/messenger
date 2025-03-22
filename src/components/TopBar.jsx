@@ -3,9 +3,39 @@ import { FaEdit } from "react-icons/fa";
 import { LuDelete } from "react-icons/lu";
 import "../assets/styles/TopBar.css";
 
-const TopBar = ({ chatname }) => {
+const TopBar = ({
+  chatname,
+  setIsDeleteMode,
+  setIsEditMode,
+  isEditMode,
+  isDeleteMode,
+}) => {
   const [isHoveredDelete, setIsHoveredDelete] = useState(false);
   const [isHoveredRedact, setIsHoveredRedact] = useState(false);
+
+  const handleDeleteMode = () => {
+    !isDeleteMode
+      ? alert("Выберите сообщение для удаления")
+      : alert("Режим удаления выключен");
+
+    setIsDeleteMode(!isDeleteMode);
+
+    if (isEditMode) {
+      setIsEditMode(!isEditMode);
+    }
+  };
+
+  const handleEditMode = () => {
+    !isEditMode
+      ? alert("Выберите сообщение которое собираетесь редактировать")
+      : alert("Режим редактирования выключен");
+
+    setIsEditMode(!isEditMode);
+
+    if (isDeleteMode) {
+      setIsDeleteMode(!isDeleteMode);
+    }
+  };
 
   const handleMouseEnterRedact = () => {
     setIsHoveredRedact(true);
@@ -36,6 +66,7 @@ const TopBar = ({ chatname }) => {
           }}
           onMouseEnter={handleMouseEnterRedact}
           onMouseLeave={handleMouseLeaveRedact}
+          onClick={handleEditMode}
         />
 
         <LuDelete
@@ -48,6 +79,7 @@ const TopBar = ({ chatname }) => {
           }}
           onMouseEnter={handleMouseEnterDelete}
           onMouseLeave={handleMouseLeaveDelete}
+          onClick={handleDeleteMode}
         />
       </div>
     </div>
