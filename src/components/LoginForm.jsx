@@ -7,6 +7,7 @@ const LoginForm = ({
   login,
   setPassword,
   password,
+  setIsRegPage,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,21 +33,23 @@ const LoginForm = ({
         <input
           value={login}
           type="text"
-          placeholder="Login"
+          placeholder="Логин"
           onChange={(e) => setLogin(e.target.value)}
+          required
         ></input>
         <input
           value={password}
           type="password"
           placeholder="Пароль"
           onChange={(e) => setPassword(e.target.value)}
+          required
         ></input>
 
         <button type="submit">Войти</button>
       </form>
 
       <div className="underForm">
-        <h5>Регистрация</h5>
+        <h5 onClick={() => setIsRegPage(true)}>Регистрация</h5>
         <h5>Забыли пароль?</h5>
       </div>
     </div>
