@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/LeftBar.css";
 import Chat from "./Chat";
 
-const Chats = ({ setChatId, chats }) => {
+const Chats = ({ setChatId, chats, chatId }) => {
   const [inputChatname, setInputChatname] = useState("");
 
   return (
@@ -20,7 +20,13 @@ const Chats = ({ setChatId, chats }) => {
             el.chatname.toLowerCase().includes(inputChatname.toLowerCase())
           )
           .map((el, index) => (
-            <Chat setChatId={setChatId} key={index} id={el.id} chat={el} />
+            <Chat
+              chatId={chatId}
+              setChatId={setChatId}
+              key={index}
+              id={el.id}
+              chat={el}
+            />
           ))}
       </div>
     </div>
