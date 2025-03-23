@@ -1,6 +1,7 @@
 @import url("./colors.css");
 
-.reg-form {
+.reg-form,
+.reset-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,13 +11,15 @@
   background: var(--background-color);
 }
 
-.reg-form h2 {
+.reg-form h2,
+.reset-form h2 {
   color: white;
   margin-bottom: 10px;
   font-size: x-large;
 }
 
-.reg-form form {
+.reg-form form,
+.reset-form form {
   display: flex;
   flex-direction: column;
 
@@ -25,21 +28,24 @@
   border-radius: 35px;
 }
 
-.reg-form form * {
+.reg-form form *,
+.reset-form form * {
   padding: 7px;
   margin: 30px;
   border-radius: 35px;
   border: 0px;
 }
 
-.reg-form form button {
+.reg-form form button,
+.reset-form form button {
   background: linear-gradient(55deg, #764ba2, #7b68ee);
   border: 1px solid rgb(255, 255, 255);
   color: white;
   transition: all 1s ease-in-out;
 }
 
-.reg-form form button:hover {
+.reg-form form button:hover,
+.reset-form form button:hover {
   background: var(--button-hover);
   transform: scale(1.1);
 }

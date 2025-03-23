@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import "../assets/styles/RegistrationAndResetForms.css";
 
-const RegistrationForm = ({ setIsRegPage }) => {
+const ResetPasswordForm = ({ setIsResetPasswordPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -11,13 +11,13 @@ const RegistrationForm = ({ setIsRegPage }) => {
     console.log("Данные формы:", data);
     if (true) {
       alert("Успех!");
-      setIsRegPage(false);
+      setIsResetPasswordPage(false);
     }
     e.target.reset();
   };
 
   return (
-    <div className="reg-form">
+    <div className="reset-form">
       <h2>Регистрация</h2>
       <FaArrowCircleLeft
         style={{
@@ -29,7 +29,7 @@ const RegistrationForm = ({ setIsRegPage }) => {
           height: "auto",
         }}
         onClick={() => {
-          setIsRegPage(false);
+          setIsResetPasswordPage(false);
         }}
       />
       <form onSubmit={handleSubmit}>
@@ -47,15 +47,10 @@ const RegistrationForm = ({ setIsRegPage }) => {
           required
         />
 
-        <label htmlFor="imageInput" className="label-for-image">
-          Выберите аватар
-        </label>
-        <input type="file" id="imageInput" name="image" accept="image/*" />
-
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">Сменить пароль</button>
       </form>
     </div>
   );
 };
 
-export default RegistrationForm;
+export default ResetPasswordForm;

@@ -8,6 +8,7 @@ const LoginForm = ({
   setPassword,
   password,
   setIsRegPage,
+  setIsResetPasswordPage,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +51,7 @@ const LoginForm = ({
 
       <div className="underForm">
         <h5 onClick={() => setIsRegPage(true)}>Регистрация</h5>
-        <h5>Забыли пароль?</h5>
+        <h5 onClick={() => setIsResetPasswordPage(true)}>Забыли пароль?</h5>
       </div>
     </div>
   );
