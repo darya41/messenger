@@ -1,3 +1,5 @@
+@import url("./colors.css");
+
 .message-block {
   border-radius: 15px;
   padding: 10px 20px;
@@ -31,4 +33,26 @@
   align-self: flex-end;
   background-color: #ffffff;
   text-align: right;
+}
+
+.edit {
+  border: 3px solid #20ff33;
+}
+
+.del {
+  border: 3px solid #ff2020;
+}
+
+.input-block {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.edit-input {
+  border-radius: 35px;
+  border: 0;
+  padding-left: 3px;
+  background-color: var(--third-color);
+  color: #ffffff;
 }

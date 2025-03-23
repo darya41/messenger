@@ -1,7 +1,7 @@
 .main div.main-part {
   display: flex;
   flex-direction: column;
-  width: 73%;
+  width: calc(73% - 10px);
   height: 100%;
   margin-left: 5px;
   position: relative;

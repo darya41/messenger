@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/styles/Messages.css";
 import Message from "./Message";
 
-const Messages = ({ messages, isDeleteMode, isEditMode, setMessages }) => {
+const Messages = ({
+  messages,
+  isDeleteMode,
+  isEditMode,
+  setMessages,
+  setIsEditMode,
+}) => {
+  const [editIndex, setEditIndex] = useState(-1);
+
+  useEffect(() => {
+    if (!isEditMode) {
+      setEditIndex(-1);
+    }
+  }, [isEditMode]);
+
   return (
     <div className="messages">
       {messages.map((el, index) => (
@@ -16,6 +30,9 @@ const Messages = ({ messages, isDeleteMode, isEditMode, setMessages }) => {
           time={el.time}
           messages={messages}
           setMessages={setMessages}
+          editIndex={editIndex}
+          setEditIndex={setEditIndex}
+          setIsEditMode={setIsEditMode}
         />
       ))}
     </div>
