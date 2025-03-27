@@ -8,8 +8,15 @@ const Messages = ({
   isEditMode,
   setMessages,
   setIsEditMode,
+  setSelectedIdsLen,
+  setIsDeleteMode,
 }) => {
   const [editIndex, setEditIndex] = useState(-1);
+  const [selectedMessagesIds, setSelectedMessagesIds] = useState([]);
+
+  useEffect(() => {
+    setSelectedIdsLen(selectedMessagesIds.length);
+  }, [selectedMessagesIds]);
 
   useEffect(() => {
     if (!isEditMode) {
@@ -33,6 +40,9 @@ const Messages = ({
           editIndex={editIndex}
           setEditIndex={setEditIndex}
           setIsEditMode={setIsEditMode}
+          setSelectedMessagesIds={setSelectedMessagesIds}
+          selectedMessagesIds={selectedMessagesIds}
+          setIsDeleteMode={setIsDeleteMode}
         />
       ))}
     </div>

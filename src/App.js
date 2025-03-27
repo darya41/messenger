@@ -10,8 +10,7 @@ import ResetPasswordForm from "./components/ResetPasswordForm";
 
 function App() {
   const [isLoginned, setIsLoginned] = useState(false);
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  const [id, setId] = useState("");
   const [isRegPage, setIsRegPage] = useState(false);
   const [isResetPasswordPage, setIsResetPasswordPage] = useState(false);
 
@@ -60,10 +59,7 @@ function App() {
               ) : (
                 <LoginForm
                   setIsLoginned={setIsLoginned}
-                  setLogin={setLogin}
-                  login={login}
-                  password={password}
-                  setPassword={setPassword}
+                  setId={setId}
                   setIsRegPage={setIsRegPage}
                   setIsResetPasswordPage={setIsResetPasswordPage}
                 />
@@ -72,7 +68,7 @@ function App() {
           </CSSTransition>
         </SwitchTransition>
       ) : (
-        <Main login={login} />
+        <Main id={id} />
       )}
     </div>
   );

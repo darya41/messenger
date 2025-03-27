@@ -116,7 +116,7 @@ const chats_server = [
   },
 ];
 
-const Main = ({ login }) => {
+const Main = ({ id }) => {
   const [chats, setChats] = useState([]);
 
   const [messages, setMessages] = useState([]);
@@ -138,7 +138,7 @@ const Main = ({ login }) => {
 
     setChatId(0);
     console.log(chats_server);
-  }, [login]);
+  }, [id]);
 
   useEffect(() => {
     if (chats.length > 0 && chatId >= 0 && chatId < chats.length) {

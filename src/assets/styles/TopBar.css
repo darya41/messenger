@@ -1,7 +1,8 @@
 @import url("./colors.css");
 
 .top-bar {
-  width: 100%;
+  width: calc(100% - 20px);
+  padding: 10px;
   height: 100px;
   text-align: center;
   border: 0;
