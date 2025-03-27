@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/styles/Main.css";
-import Chats from "./Chats";
+import LeftBar from "./LeftBar";
 import MainPart from "./MainPart";
 
 const chats_server = [
@@ -137,7 +137,7 @@ const Main = ({ id }) => {
     setChats(chats_server);
 
     setChatId(0);
-    console.log(chats_server);
+    // console.log(chats_server);
   }, [id]);
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const Main = ({ id }) => {
 
   return (
     <div className="main">
-      <Chats setChatId={setChatId} chats={chats} chatId={chatId} />
+      <LeftBar setChatId={setChatId} chats={chats} chatId={chatId} />
       <MainPart
         messages={messages}
         setMessages={setMessages}
