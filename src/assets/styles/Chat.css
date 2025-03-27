@@ -25,7 +25,7 @@ p {
 }
 
 .chat:hover {
-  box-shadow: 10px 10px 30px rgb(43, 0, 255);
+  box-shadow: 10px 10px 30px rgb(253, 109, 255);
   transform: scale(1.02);
 }
 
