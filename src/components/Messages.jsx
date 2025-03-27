@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../assets/styles/Messages.css";
 import Message from "./Message";
 
@@ -10,9 +10,15 @@ const Messages = ({
   setIsEditMode,
   setSelectedIdsLen,
   setIsDeleteMode,
+  chatname,
 }) => {
   const [editIndex, setEditIndex] = useState(-1);
   const [selectedMessagesIds, setSelectedMessagesIds] = useState([]);
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    setSelectedMessagesIds([]);
+  }, [chatname]);
 
   useEffect(() => {
     setSelectedIdsLen(selectedMessagesIds.length);
@@ -23,6 +29,10 @@ const Messages = ({
       setEditIndex(-1);
     }
   }, [isEditMode]);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chatname]);
 
   return (
     <div className="messages">
@@ -43,8 +53,11 @@ const Messages = ({
           setSelectedMessagesIds={setSelectedMessagesIds}
           selectedMessagesIds={selectedMessagesIds}
           setIsDeleteMode={setIsDeleteMode}
+          chatname={chatname}
         />
       ))}
+
+      <div ref={messagesEndRef} />
     </div>
   );
 };

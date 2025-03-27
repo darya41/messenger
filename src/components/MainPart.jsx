@@ -28,6 +28,7 @@ const MainPart = ({ messages, setMessages, chatname }) => {
         setIsEditMode={setIsEditMode}
         setSelectedIdsLen={setSelectedIdsLen}
         setIsDeleteMode={setIsDeleteMode}
+        chatname={chatname}
       />
 
       <SendMessage setMessages={setMessages} messages={messages} />

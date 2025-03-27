@@ -18,10 +18,15 @@ const Message = ({
   setSelectedMessagesIds,
   selectedMessagesIds,
   setIsDeleteMode,
+  chatname,
 }) => {
   const [newMessage, setNewMessage] = useState(message);
   const [isHover, setIsHover] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    setIsClicked(false);
+  }, [chatname]);
 
   useEffect(() => {
     if (isDeleteMode && selectedMessagesIds.length > 0) {
