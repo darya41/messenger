@@ -1,4 +1,7 @@
+@import url("./colors.css");
+
 .chat {
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   gap: 50px;
@@ -23,5 +26,13 @@ p {
 
 .chat:hover {
   box-shadow: 10px 10px 30px rgb(43, 0, 255);
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+
+.clicked {
+  background-color: var(--f-color);
+}
+
+.clicked p {
+  color: #ffff;
 }

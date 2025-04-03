@@ -6,15 +6,18 @@ import "./assets/styles/Transitions.css";
 import LoginForm from "./components/LoginForm";
 import Main from "./components/Main";
 import RegistrationForm from "./components/RegistrationForm";
+import ResetPasswordForm from "./components/ResetPasswordForm";
 
 function App() {
   const [isLoginned, setIsLoginned] = useState(false);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [isRegPage, setIsRegPage] = useState(false);
+  const [isResetPasswordPage, setIsResetPasswordPage] = useState(false);
 
   const loginRef = useRef(null);
   const registerRef = useRef(null);
+  const resetRef = useRef(null);
 
   useEffect(() => {
     setIsLoginned(localStorage.getItem("isLoginned") === "true");
@@ -26,14 +29,34 @@ function App() {
       {isLoginned === false ? (
         <SwitchTransition mode="out-in">
           <CSSTransition
-            key={isRegPage ? "register" : "login"}
+            key={
+              isRegPage ? "register" : isResetPasswordPage ? "reset" : "login"
+            }
             timeout={300}
             classNames="fade"
-            nodeRef={isRegPage ? registerRef : loginRef}
+            nodeRef={
+              isRegPage
+                ? registerRef
+                : isResetPasswordPage
+                ? resetRef
+                : loginRef
+            }
           >
-            <div ref={isRegPage ? registerRef : loginRef}>
+            <div
+              ref={
+                isRegPage
+                  ? registerRef
+                  : isResetPasswordPage
+                  ? resetRef
+                  : loginRef
+              }
+            >
               {isRegPage ? (
                 <RegistrationForm setIsRegPage={setIsRegPage} />
+              ) : isResetPasswordPage ? (
+                <ResetPasswordForm
+                  setIsResetPasswordPage={setIsResetPasswordPage}
+                />
               ) : (
                 <LoginForm
                   setIsLoginned={setIsLoginned}
@@ -42,6 +65,7 @@ function App() {
                   password={password}
                   setPassword={setPassword}
                   setIsRegPage={setIsRegPage}
+                  setIsResetPasswordPage={setIsResetPasswordPage}
                 />
               )}
             </div>

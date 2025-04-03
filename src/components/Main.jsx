@@ -151,7 +151,7 @@ const Main = ({ login }) => {
 
   return (
     <div className="main">
-      <Chats setChatId={setChatId} chats={chats} />
+      <Chats setChatId={setChatId} chats={chats} chatId={chatId} />
       <MainPart
         messages={messages}
         setMessages={setMessages}
