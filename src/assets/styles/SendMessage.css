@@ -28,3 +28,12 @@
 .send-message * {
   margin-right: 20px;
 }
+
+.send {
+  color: rgb(76, 0, 255);
+  transition: all 0.3s linear;
+}
+
+.send:hover {
+  color: #9830ff;
+}

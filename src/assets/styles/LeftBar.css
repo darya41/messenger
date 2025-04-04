@@ -8,11 +8,11 @@
 
 .current-user-icon {
   width: 90px;
-  height: 90px;
+  height: auto;
   color: white;
   border: 1px solid black;
   border-radius: 50px;
-  margin: 1px;
+  margin: 5px 10px;
 }
 
 .left-block {

@@ -53,6 +53,7 @@
   justify-content: space-around;
   gap: 10px;
   height: auto;
+  width: 100%;
 }
 
 .edit-input {

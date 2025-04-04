@@ -39,6 +39,7 @@ const LoginForm = ({
           placeholder="Логин"
           onChange={(e) => setLogin(e.target.value)}
           required
+          autoComplete="onn"
         ></input>
         <input
           value={password}
@@ -46,6 +47,7 @@ const LoginForm = ({
           placeholder="Пароль"
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete="onn"
         ></input>
 
         <button type="submit">Войти</button>
