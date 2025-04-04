@@ -7,6 +7,7 @@ import TopBar from "./TopBar";
 const MainPart = ({ messages, setMessages, chatname }) => {
   const [isDeleteMode, setIsDeleteMode] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
+  const [selectedIdsLen, setSelectedIdsLen] = useState(0);
 
   return (
     <div className="main-part">
@@ -16,6 +17,7 @@ const MainPart = ({ messages, setMessages, chatname }) => {
         setIsEditMode={setIsEditMode}
         isDeleteMode={isDeleteMode}
         isEditMode={isEditMode}
+        selectedIdsLen={selectedIdsLen}
       />
 
       <Messages
@@ -24,6 +26,9 @@ const MainPart = ({ messages, setMessages, chatname }) => {
         isDeleteMode={isDeleteMode}
         isEditMode={isEditMode}
         setIsEditMode={setIsEditMode}
+        setSelectedIdsLen={setSelectedIdsLen}
+        setIsDeleteMode={setIsDeleteMode}
+        chatname={chatname}
       />
 
       <SendMessage setMessages={setMessages} messages={messages} />

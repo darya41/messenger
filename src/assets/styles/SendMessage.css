@@ -12,7 +12,7 @@
   height: 50px;
   align-items: center;
   border-radius: 35px;
-  background-color: #d5aaff;
+  background-color: var(--to-color);
   padding: 3px;
   box-sizing: border-box;
 }
@@ -27,4 +27,13 @@
 
 .send-message * {
   margin-right: 20px;
+}
+
+.send {
+  color: var(--s-color);
+  transition: all 0.3s linear;
+}
+
+.send:hover {
+  color: var(--secondary-color);
 }

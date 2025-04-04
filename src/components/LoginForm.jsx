@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/LoginForm.css";
 
 const LoginForm = ({
   setIsLoginned,
-  setLogin,
-  login,
-  setPassword,
-  password,
+  setId,
   setIsRegPage,
   setIsResetPasswordPage,
 }) => {
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(login, password);
@@ -21,6 +21,8 @@ const LoginForm = ({
 
       setIsLoginned(true);
       localStorage.setItem("isLoginned", true);
+
+      setId(0);
     }
 
     setLogin("");
@@ -37,6 +39,7 @@ const LoginForm = ({
           placeholder="Логин"
           onChange={(e) => setLogin(e.target.value)}
           required
+          autoComplete="onn"
         ></input>
         <input
           value={password}
@@ -44,6 +47,7 @@ const LoginForm = ({
           placeholder="Пароль"
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete="onn"
         ></input>
 
         <button type="submit">Войти</button>

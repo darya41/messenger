@@ -2,7 +2,13 @@
   --primary-color: #667eea;
   --secondary-color: #764ba2;
   --third-color: #7b68ee;
-  --f-color: #d38cff;
+  --f-color: #e498ff;
+  --ff-color: rgb(253, 109, 255);
+  --s-color: #6200ff;
+  --to-color: #d5aaff;
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #00008B;
 
   --background-color: linear-gradient(
     135deg,
@@ -21,11 +27,97 @@
     150deg,
     var(--secondary-color),
     var(--third-color),
-    #d5aaff
+    var(--to-color)
   );
 
+  --fourth-background-color:linear-gradient(55deg, #764ba2, #7b68ee)
+
   --text-color: #333;
+  --text1-color: #666;
   --input-border: #ccc;
   --input-focus: rgba(102, 126, 234, 0.5);
   --button-hover: #5563c1;
+}
+
+[data-theme="light"] {
+  --primary-color: #ffffff;
+  --secondary-color: #757575;
+  --third-color: #f3f3f3;
+  --f-color: #6a6a6a;
+  --ff-color: rgb(57, 57, 57);
+  --s-color: #393939;
+  --to-color: #878787;
+  --white: #ffffff;
+  --black: #3e3e3e;
+  --dark-blue: #0c0c12;
+
+  --background-color: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  --second-background-color: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--third-color)
+  );
+
+  --third-background-color: linear-gradient(
+    150deg,
+    var(--secondary-color),
+    var(--third-color),
+    var(--to-color)
+  );
+
+  --fourth-background-color:linear-gradient(55deg, #764ba2, #7b68ee)
+
+  --text-color: #333;
+  --text1-color: #8a8a8a;
+  --input-border: #d6d6d6;
+  --input-focus: rgba(171, 182, 232, 0.5);
+  --button-hover: #5c607a;
+}
+
+[data-theme="green"] {
+
+  --primary-color: #6dea66;
+  --secondary-color: #4fa24b;
+  --third-color: #68ee8e;
+  --f-color: #1f9b00;
+  --ff-color: rgb(0, 164, 41);
+  --s-color: #6aff00;
+  --to-color: #aaffb0;
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #008b0c;
+
+  --background-color: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  --second-background-color: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--third-color)
+  );
+
+  --third-background-color: linear-gradient(
+    150deg,
+    var(--secondary-color),
+    var(--third-color),
+    var(--to-color)
+  );
+
+  --fourth-background-color:linear-gradient(55deg, #764ba2, #7b68ee)
+
+  --text-color: #333;
+  --text1-color: #666;
+  --input-border: #ccc;
+  --input-focus: rgba(102, 234, 205, 0.5);
+  --button-hover: #55c172;
 }

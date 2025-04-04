@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/styles/Main.css";
-import Chats from "./Chats";
+import LeftBar from "./LeftBar";
 import MainPart from "./MainPart";
 
 const chats_server = [
@@ -116,7 +116,7 @@ const chats_server = [
   },
 ];
 
-const Main = ({ login }) => {
+const Main = ({ id, setIsLoginned }) => {
   const [chats, setChats] = useState([]);
 
   const [messages, setMessages] = useState([]);
@@ -137,8 +137,8 @@ const Main = ({ login }) => {
     setChats(chats_server);
 
     setChatId(0);
-    console.log(chats_server);
-  }, [login]);
+    // console.log(chats_server);
+  }, [id]);
 
   useEffect(() => {
     if (chats.length > 0 && chatId >= 0 && chatId < chats.length) {
@@ -151,7 +151,12 @@ const Main = ({ login }) => {
 
   return (
     <div className="main">
-      <Chats setChatId={setChatId} chats={chats} chatId={chatId} />
+      <LeftBar
+        setChatId={setChatId}
+        chats={chats}
+        chatId={chatId}
+        setIsLoginned={setIsLoginned}
+      />
       <MainPart
         messages={messages}
         setMessages={setMessages}
