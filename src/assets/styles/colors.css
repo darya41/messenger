@@ -83,10 +83,10 @@
 [data-theme="green"] {
 
   --primary-color: #6dea66;
-  --secondary-color: #57a24b;
+  --secondary-color: #4fa24b;
   --third-color: #68ee8e;
-  --f-color: #98b2ff;
-  --ff-color: rgb(109, 136, 255);
+  --f-color: #1f9b00;
+  --ff-color: rgb(0, 164, 41);
   --s-color: #6aff00;
   --to-color: #aaffb0;
   --white: #ffffff;
