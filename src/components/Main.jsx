@@ -116,7 +116,7 @@ const chats_server = [
   },
 ];
 
-const Main = ({ id }) => {
+const Main = ({ id, setIsLoginned }) => {
   const [chats, setChats] = useState([]);
 
   const [messages, setMessages] = useState([]);
@@ -151,7 +151,12 @@ const Main = ({ id }) => {
 
   return (
     <div className="main">
-      <LeftBar setChatId={setChatId} chats={chats} chatId={chatId} />
+      <LeftBar
+        setChatId={setChatId}
+        chats={chats}
+        chatId={chatId}
+        setIsLoginned={setIsLoginned}
+      />
       <MainPart
         messages={messages}
         setMessages={setMessages}

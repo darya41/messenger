@@ -1,7 +1,10 @@
+@import url("./colors.css");
+
 .profile-menu {
   width: 300px;
-  height: 300px;
-  background: #ffffff;
+  height: auto;
+  min-height: 300px;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -12,16 +15,21 @@
 .profile-menu .top {
   padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row-reverse;
   align-items: center;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: var(--background-color);
+}
+
+.user-name {
+  color: var(--white);
 }
 
 .profile-menu .current-user-icon-menu {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--white);
   object-fit: cover;
 }
 
@@ -36,26 +44,26 @@
   border: none;
   text-align: left;
   font-size: 14px;
-  color: #333;
+  color: var(--text-color);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .profile-menu button:hover {
-  background-color: #f5f5f5;
+  background-color: var(--input-border);
 }
 
 .profile-menu button:active {
-  background-color: #e9e9e9;
+  background-color: var(--button-hover);
 }
 
-.profile-menu button:is(:last-child):active {
+.profile-menu button.log-out:active {
   background-color: #ff2828;
-  color: #fff;
+  color: var(--white);
 }
 
 .profile-menu button:not(:last-child) {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--input-border);
 }
 
 .profile-menu {

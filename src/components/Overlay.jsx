@@ -3,7 +3,7 @@ import { RxCross1 } from "react-icons/rx";
 import "../assets/styles/Overlay.css";
 import ProfileMenu from "./ProfileMenu";
 
-const Overlay = ({ isOverlayOnn, setIsOverlayOnn }) => {
+const Overlay = ({ isOverlayOnn, setIsOverlayOnn, setIsLoginned }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -23,7 +23,7 @@ const Overlay = ({ isOverlayOnn, setIsOverlayOnn }) => {
         onMouseLeave={() => setIsHover(false)}
       />
 
-      <ProfileMenu />
+      <ProfileMenu setIsLoginned={setIsLoginned} />
     </div>
   );
 };

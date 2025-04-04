@@ -68,7 +68,7 @@ function App() {
           </CSSTransition>
         </SwitchTransition>
       ) : (
-        <Main id={id} />
+        <Main id={id} setIsLoginned={setIsLoginned} />
       )}
     </div>
   );

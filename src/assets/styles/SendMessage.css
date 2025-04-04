@@ -12,7 +12,7 @@
   height: 50px;
   align-items: center;
   border-radius: 35px;
-  background-color: #d5aaff;
+  background-color: var(--to-color);
   padding: 3px;
   box-sizing: border-box;
 }
@@ -30,10 +30,10 @@
 }
 
 .send {
-  color: rgb(76, 0, 255);
+  color: var(--s-color);
   transition: all 0.3s linear;
 }
 
 .send:hover {
-  color: #9830ff;
+  color: var(--secondary-color);
 }

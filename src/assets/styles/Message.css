@@ -27,24 +27,24 @@
 .message-block h3 {
   margin: 0;
   font-size: 16px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .message-block p {
   margin: 5px 0 0;
   font-size: 12px;
-  color: #666;
+  color: var(--text1-color);
 }
 
 .to {
   align-self: flex-start;
-  background-color: #d5aaff;
+  background-color: var(--to-color);
   text-align: left;
 }
 
 .from {
   align-self: flex-end;
-  background-color: #ffffff;
+  background-color: var(--white);
   text-align: right;
 }
 
@@ -61,7 +61,7 @@
   border: 0;
   padding-left: 3px;
   background-color: var(--third-color);
-  color: #ffffff;
+  color: var(--white);
   width: auto;
   height: auto;
 }

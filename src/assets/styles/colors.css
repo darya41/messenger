@@ -3,6 +3,12 @@
   --secondary-color: #764ba2;
   --third-color: #7b68ee;
   --f-color: #e498ff;
+  --ff-color: rgb(253, 109, 255);
+  --s-color: #6200ff;
+  --to-color: #d5aaff;
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #00008B;
 
   --background-color: linear-gradient(
     135deg,
@@ -21,11 +27,23 @@
     150deg,
     var(--secondary-color),
     var(--third-color),
-    #d5aaff
+    var(--to-color)
   );
 
+  --fourth-background-color:linear-gradient(55deg, #764ba2, #7b68ee)
+
   --text-color: #333;
+  --text1-color: #666;
   --input-border: #ccc;
   --input-focus: rgba(102, 126, 234, 0.5);
   --button-hover: #5563c1;
+}
+
+[data-theme="light"] {
+}
+
+[data-theme="purple"] {
+}
+
+[data-theme="light"] {
 }

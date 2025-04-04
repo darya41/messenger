@@ -3,14 +3,18 @@ import "../assets/styles/LeftBar.css";
 import Chat from "./Chat";
 import Overlay from "./Overlay";
 
-const Chats = ({ setChatId, chats, chatId }) => {
+const Chats = ({ setChatId, chats, chatId, setIsLoginned }) => {
   const [inputChatname, setInputChatname] = useState("");
 
   const [isOverlayOnn, setIsOverlayOnn] = useState(false);
 
   return (
     <div className="left-block">
-      <Overlay isOverlayOnn={isOverlayOnn} setIsOverlayOnn={setIsOverlayOnn} />
+      <Overlay
+        isOverlayOnn={isOverlayOnn}
+        setIsOverlayOnn={setIsOverlayOnn}
+        setIsLoginned={setIsLoginned}
+      />
 
       <div className="top-block">
         <img

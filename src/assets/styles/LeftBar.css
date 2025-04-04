@@ -9,8 +9,8 @@
 .current-user-icon {
   width: 90px;
   height: auto;
-  color: white;
-  border: 1px solid black;
+  color: var(-white);
+  border: 1px solid var(--black);
   border-radius: 50px;
   margin: 5px 10px;
 }
@@ -39,9 +39,9 @@
 
 .chats::-webkit-scrollbar {
   width: 5px;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 .chats::-webkit-scrollbar-thumb {
-  background: #6200ff;
+  background: var(--s-color);
   border-radius: 4px;
 }

@@ -1,3 +1,5 @@
+@import url("./colors.css");
+
 .messages {
   display: flex;
   flex-direction: column;
@@ -8,9 +10,9 @@
 
 .messages::-webkit-scrollbar {
   width: 5px;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 .messages::-webkit-scrollbar-thumb {
-  background: #6200ff;
+  background: var(--s-color);
   border-radius: 4px;
 }
