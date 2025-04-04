@@ -33,12 +33,6 @@ const ThemeSwitcher = () => {
     setIsOpen(false);
   };
 
-  // Инициализация темы при загрузке
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "purple";
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
-
   return (
     <div className="theme-switcher" ref={dropdownRef}>
       <button

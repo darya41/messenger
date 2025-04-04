@@ -23,6 +23,11 @@ function App() {
     console.log(isLoginned);
   }, []);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "purple";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
+
   return (
     <div className="App">
       {isLoginned === false ? (
