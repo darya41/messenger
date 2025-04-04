@@ -62,7 +62,7 @@
   color: var(--white);
 }
 
-.profile-menu button:not(:last-child) {
+.profile-menu button:not(.log-out) {
   border-bottom: 1px solid var(--input-border);
 }
 
