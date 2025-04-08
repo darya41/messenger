@@ -11,7 +11,7 @@
 }
 
 .beginner-form h2 {
-  color: var(--white);
+  color: white;
   margin-bottom: 10px;
   font-size: x-large;
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
 
   background: var(--second-background-color);
-  border: 1px var(--white) solid;
+  border: 1px rgb(255, 255, 255) solid;
   border-radius: 35px;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .beginner-form form button {
-  background: var(--fourth-background-color);
-  border: 1px solid var(--white);
-  color: var(--white);
+  background: linear-gradient(55deg, #764ba2, #7b68ee);
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
   transition: all 1s ease-in-out;
 }
 
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: var(--white);
+  color: white;
   cursor: pointer;
   padding: 10px;
 }

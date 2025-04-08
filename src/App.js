@@ -10,7 +10,8 @@ import ResetPasswordForm from "./components/ResetPasswordForm";
 
 function App() {
   const [isLoginned, setIsLoginned] = useState(false);
-  const [id, setId] = useState("");
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
   const [isRegPage, setIsRegPage] = useState(false);
   const [isResetPasswordPage, setIsResetPasswordPage] = useState(false);
 
@@ -21,11 +22,6 @@ function App() {
   useEffect(() => {
     setIsLoginned(localStorage.getItem("isLoginned") === "true");
     console.log(isLoginned);
-  }, []);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "purple";
-    document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
   return (
@@ -64,7 +60,10 @@ function App() {
               ) : (
                 <LoginForm
                   setIsLoginned={setIsLoginned}
-                  setId={setId}
+                  setLogin={setLogin}
+                  login={login}
+                  password={password}
+                  setPassword={setPassword}
                   setIsRegPage={setIsRegPage}
                   setIsResetPasswordPage={setIsResetPasswordPage}
                 />
@@ -73,7 +72,7 @@ function App() {
           </CSSTransition>
         </SwitchTransition>
       ) : (
-        <Main id={id} setIsLoginned={setIsLoginned} />
+        <Main login={login} />
       )}
     </div>
   );

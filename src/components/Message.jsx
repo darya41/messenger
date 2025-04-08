@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import "../assets/styles/Message.css";
 
@@ -15,118 +14,55 @@ const Message = ({
   setEditIndex,
   editIndex,
   setIsEditMode,
-  setSelectedMessagesIds,
-  selectedMessagesIds,
-  setIsDeleteMode,
-  chatname,
 }) => {
   const [newMessage, setNewMessage] = useState(message);
-  const [isHover, setIsHover] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
 
-  useEffect(() => {
-    setIsClicked(false);
-  }, [chatname]);
+  const handleDeleteOrEdit = (id) => {
+    if (isDeleteMode) {
+      setMessages(messages.filter((mes, index) => id !== index));
 
-  useEffect(() => {
-    if (isDeleteMode && selectedMessagesIds.length > 0) {
-      setIsClicked(false);
-      setMessages(
-        messages.filter((mes, index) => !selectedMessagesIds.includes(index))
-      );
+      alert("deleted");
     }
 
-    setIsDeleteMode(false);
-    setSelectedMessagesIds([]);
-  }, [isDeleteMode]);
-
-  useEffect(() => {
-    if (!isEditMode || !selectedMessagesIds || selectedMessagesIds.length !== 1)
-      return;
-
-    const [selectedId] = selectedMessagesIds;
-
-    if (id !== selectedId) {
-      setEditIndex(selectedId);
+    if (isEditMode) {
+      if (id !== editIndex) {
+        setEditIndex(id);
+        alert("editing");
+      }
     }
-  }, [isEditMode]);
+  };
 
   return (
     <div
-      className={`wrapper ${!isFrom ? "to-wr" : "from-wr"}`}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
+      className={`message-block ${!isFrom ? "to" : "from"} ${
+        isDeleteMode ? "del" : ""
+      } ${isEditMode ? "edit" : ""}`}
+      onClick={() => handleDeleteOrEdit(id)}
     >
-      {isFrom && (isHover || isClicked) ? (
-        <FaCheckCircle
-          style={{
-            width: 30,
-            height: 30,
-          }}
-          color={!isClicked ? `white` : "pink"}
-          onClick={() => {
-            setSelectedMessagesIds((prevIds) => {
-              if (isClicked) {
-                return prevIds.filter((id_a) => id_a !== id);
-              } else {
-                return [...prevIds, id];
-              }
-            });
-            setIsClicked(!isClicked);
-          }}
-        />
+      {console.log(editIndex)}
+      {isEditMode && editIndex === id ? (
+        <div className="input-block">
+          <input
+            className="edit-input"
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <MdModeEdit
+            onClick={() => {
+              setIsEditMode(false);
+              setMessages(
+                messages.map((message, index) =>
+                  index === id ? { ...message, message: newMessage } : message
+                )
+              );
+            }}
+          />
+        </div>
       ) : (
-        ""
+        <h3>{message}</h3>
       )}
-
-      <div className={`message-block ${!isFrom ? "to" : "from"}`}>
-        {/* {console.log(editIndex)} */}
-        {isEditMode && editIndex === id ? (
-          <div className="input-block">
-            <input
-              className="edit-input"
-              type="text"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
-            <MdModeEdit
-              onClick={() => {
-                setIsEditMode(false);
-                setMessages(
-                  messages.map((message, index) =>
-                    index === id ? { ...message, message: newMessage } : message
-                  )
-                );
-              }}
-            />
-          </div>
-        ) : (
-          <h3>{message}</h3>
-        )}
-        <p>{time}</p>
-      </div>
-
-      {!isFrom && (isHover || isClicked) ? (
-        <FaCheckCircle
-          style={{
-            width: 30,
-            height: 30,
-          }}
-          color={!isClicked ? `white` : "pink"}
-          onClick={() => {
-            setSelectedMessagesIds((prevIds) => {
-              if (isClicked) {
-                return prevIds.filter((id_a) => id_a !== id);
-              } else {
-                return [...prevIds, id];
-              }
-            });
-            setIsClicked(!isClicked);
-          }}
-        />
-      ) : (
-        ""
-      )}
+      <p>{time}</p>
     </div>
   );
 };

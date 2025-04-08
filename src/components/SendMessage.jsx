@@ -25,7 +25,6 @@ const SendMessage = ({ messages, setMessages }) => {
         placeholder="Введите сообщение"
       />
       <IoSend
-        className="send"
         style={{ width: 30, height: 30 }}
         onClick={() => {
           if (currentMessage != "")

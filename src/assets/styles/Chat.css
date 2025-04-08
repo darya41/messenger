@@ -6,26 +6,26 @@
   flex-direction: row;
   gap: 50px;
   align-items: center;
-  background-color: var(--white);
+  background-color: rgb(255, 255, 255);
   margin: 5px 10px;
   transition: all 0.5s ease-in-out;
 }
 .user-icon {
   width: 70px;
   height: 70px;
-  color: var(--white);
-  border: 1px solid var(--black);
+  color: white;
+  border: 1px solid black;
   border-radius: 50px;
   margin: 3px 15px 3px 20px;
 }
 
 p {
-  color: var(--black);
+  color: rgb(0, 0, 0);
   font-size: 20px;
 }
 
 .chat:hover {
-  box-shadow: 10px 10px 30px var(--ff-color);
+  box-shadow: 10px 10px 30px rgb(43, 0, 255);
   transform: scale(1.02);
 }
 
@@ -34,5 +34,5 @@ p {
 }
 
 .clicked p {
-  color: var(--white);
+  color: #ffff;
 }
