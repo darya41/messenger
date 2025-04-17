@@ -1,12 +1,13 @@
 {
   "builds": [
     {
-      "src": "backend/pom.xml",  // Путь к pom.xml (Maven) или build.gradle (Gradle)
-      "use": "@railway/java"
+      "src": "backend/pom.xml",  // Путь к pom.xml (для Maven)
+      "use": "@railway/java",
+      "ignore": ["*", "!backend/**"]  // Игнорировать всё, кроме папки /backend
     }
   ],
   "variables": {
-    "SPRING_DATASOURCE_URL": "${DATABASE_URL}",  // Если используете БД
+    "SPRING_DATASOURCE_URL": "${DATABASE_URL}",
     "PORT": "8080"
   }
 }
