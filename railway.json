@@ -1,0 +1,12 @@
+{
+  "builds": [
+    {
+      "src": "backend/pom.xml",  // Путь к pom.xml (Maven) или build.gradle (Gradle)
+      "use": "@railway/java"
+    }
+  ],
+  "variables": {
+    "SPRING_DATASOURCE_URL": "${DATABASE_URL}",  // Если используете БД
+    "PORT": "8080"
+  }
+}
